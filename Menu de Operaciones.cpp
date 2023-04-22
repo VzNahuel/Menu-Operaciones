@@ -10,7 +10,7 @@ main()
 {
 	int opc = 0;
 	
-	int A, B, S;
+	int A, B, S, R;
 	
 	do{
 		printf("\t-- Menu de Operaciones Aritemeticas --\n");
@@ -35,7 +35,7 @@ main()
 				
 				S = sumar(A, B);
 				
-				printf("El resultado de la suma es: %d\n", S);
+				printf("\nEl resultado de la suma es: %d\n", S);
 				
 				system("PAUSE");
 				
@@ -43,8 +43,19 @@ main()
 				break;
 			
 			case 2:
-				printf("Opcion no disponible aun\n");
+				printf("Ingrese el primer valor: ");
+				scanf("%d", &A);
+				
+				printf("Ingrese el segundo valor: ");
+				scanf("%d", &B);
+				
+				R = restar(A, B);
+				
+				printf("\nEl resultado de la resta es: %d\n", R);
+				
 				system("PAUSE");
+				
+				system("CLS");
 				break;
 				
 			case 3:
@@ -69,5 +80,11 @@ int sumar(int A, int B)
 {
 	int S = A + B;
 	return S;
+}
+
+int restar(int A, int B)
+{
+	int R = A - B;
+	return R;
 }
 
