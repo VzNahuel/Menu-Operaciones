@@ -1,13 +1,18 @@
 #include <stdlib.h>
 #include <stdio.h>
 
+int sumar(int A, int B);
+int restar(int A, int B);
+int multiplicar(int A, int B);
+float dividir(int A, int B);
+
 main()
 {
 	int opc = 0;
 	
+	int A, B, S;
+	
 	do{
-		system("CLS");
-		
 		printf("\t-- Menu de Operaciones Aritemeticas --\n");
 		printf("\n1) Sumar");
 		printf("\n2) Restar");
@@ -17,11 +22,24 @@ main()
 		printf("\n\nElija una opcion: ");
 		scanf("%d", &opc);
 		
+		system("CLS");
+		
 		switch(opc)
 		{
 			case 1:
-				printf("Eligio la opcion 1 :)\n");
+				printf("Ingrese el primer valor: ");
+				scanf("%d", &A);
+				
+				printf("Ingrese el segundo valor: ");
+				scanf("%d", &B);
+				
+				S = sumar(A, B);
+				
+				printf("El resultado de la suma es: %d\n", S);
+				
 				system("PAUSE");
+				
+				system("CLS");
 				break;
 			
 			case 2:
@@ -46,3 +64,10 @@ main()
 	
 	
 }
+
+int sumar(int A, int B)
+{
+	int S = A + B;
+	return S;
+}
+
